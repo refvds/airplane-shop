@@ -9,6 +9,15 @@ const getAirplanes = async(req, res) => {
     }
 };
 
+const getAirplane = async(req, res) => {
+    try {
+        const airplane = await Airplane.findById({ _id: req.params.id });
+        res.status(200).json(airplane);
+    } catch (error) {
+        res.status(400).json({error: 'The airplane has not found'});
+    }
+}
+
 const createAirplane = async(req, res) => {
     const errors = {};
 
@@ -65,5 +74,6 @@ const createAirplane = async(req, res) => {
 
 module.exports = {
     getAirplanes,
-    createAirplane
+    createAirplane,
+    getAirplane
 }

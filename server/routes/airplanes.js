@@ -1,7 +1,7 @@
 const path = require('path')
 const express = require('express');
 const multer = require('multer');
-const { getAirplanes, createAirplane } = require('../controllers/airplanes');
+const { getAirplanes, createAirplane, getAirplane } = require('../controllers/airplanes');
 
 const router = express.Router();
 
@@ -15,7 +15,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 router.get('/', getAirplanes);
-router.get('/:id', (req, res)=>res.send('Get an airplane'));
+router.get('/:id', getAirplane);
 router.post('/', upload.single('image'), createAirplane);
 
 module.exports = router;
