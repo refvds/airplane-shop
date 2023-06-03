@@ -9,8 +9,8 @@ const airplaneSchema = mongoose.Schema({
         type: Number,
         required: true
     },
-    copacity: {
-        type: String,
+    capacity: {
+        type: Number,
         required: true
     },
     description: {
