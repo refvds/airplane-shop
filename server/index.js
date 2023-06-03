@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 
-
 const app = express();
 require('dotenv').config();
 
@@ -9,8 +8,10 @@ const port = process.env.PORT || 4000;
 
 // middleware for an application/json
 app.use(express.json());
+
 // middleware for application/x-www-form- urlencoded to parse a form
 app.use(express.urlencoded({extended: true}));
+
 // the PATH to images
 app.use('/static', express.static(`${__dirname}/assets`));
 
