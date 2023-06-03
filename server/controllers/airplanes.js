@@ -54,7 +54,6 @@ const createAirplane = async(req, res) => {
     if (Object.keys(errors).length > 0) {
         return res.status(400).json(errors);
     }
-
     try {
         const { name, price, description, capacity } = req.body;
         const airplane = await Airplane.create({
@@ -64,7 +63,7 @@ const createAirplane = async(req, res) => {
             capacity,
             image:  `http://localhost:${process.env.PORT}/static/${req.file.filename}` 
         });
-        
+        console.log(airplane)
         res.status(201).json(airplane);
     } catch(error) {
         res.status(500).json({error: 'Internal Server Error'});
