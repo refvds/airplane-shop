@@ -1,0 +1,7 @@
+.wrapper {
+    display: flex;
+    z-index: 2;
+    max-width: 1234px; 
+    width: 100%;
+    margin: 0 auto;
+}
