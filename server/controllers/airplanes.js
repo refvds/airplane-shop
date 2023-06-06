@@ -61,7 +61,7 @@ const createAirplane = async(req, res) => {
             price, 
             description, 
             capacity,
-            image:  `http://localhost:${process.env.PORT}/static/${req.file.filename}` 
+            image:  `http://localhost:${4000}/static/${req.file.filename}` 
         });
         console.log(airplane)
         res.status(201).json(airplane);
