@@ -4,6 +4,7 @@ import { AirplanePage } from './pages/AirplanePage';
 import { CreateAirplanePage } from './pages/CreateAirplanePage';
 import { path } from './paths';
 import './App.css';
+import { OrderPage } from './pages/OrderPage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path={path.home} element={<Homepage />}/>
       <Route path={`${path.airplane}/:id`} element={<AirplanePage />}/>
       <Route path={`${path.createAirplane}`} element={<CreateAirplanePage />}/>
+      <Route path={`${path.order}`} element={<OrderPage />}/>
     </Routes>
     </BrowserRouter>
   )
