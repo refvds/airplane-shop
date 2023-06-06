@@ -5,10 +5,21 @@ const getAirplanes = async () => {
     return airplanes.data;
 }
 
+const getAirplane = async (id) => {
+    const airplane = await axios.get(`http://localhost:4000/api/airplanes/${id}`);
+    console.log(airplane.data)
+    return airplane.data;
+}
+
+const postAirplane = async (airplaneObj) => {
+    const airplane = await axios.post('http://localhost:4000/api/airplanes',airplaneObj);
+    return airplane.data;
+}
 
 const airplanesService = {
-    getAirplanes
-  
+    getAirplanes,
+    getAirplane,
+    postAirplane
 }
 
 export default airplanesService;
